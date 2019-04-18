@@ -1,0 +1,5 @@
+/* Quitar margen interno y externo a todo */
+* {
+    margin: 0px;
+    padding: 0px;
+}
