@@ -3,3 +3,29 @@
     margin: 0px;
     padding: 0px;
 }
+
+#entries {
+    margin: 20px auto;
+    width: 85%;
+    text-align: center;
+}
+
+.group label, .grupo select, .grupo input, .grupo p {
+    display: inline;
+}
+
+.group {
+    margin: 20px auto;
+}
+
+.control {
+    padding: 5px;
+    font-size: 1em;
+}
+
+#result {
+    margin: 5px auto;
+    width: 90%;
+    border-radius: 12px;
+    background-color: rgba(160, 193, 142, 0.56);
+}
