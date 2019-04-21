@@ -2,7 +2,7 @@
     include_once("../connection.php");
     // -> This is a comment
     // Building the query
-    $query = "SELECT id, name FROM substance";
+    $query = "SELECT * FROM substance";
     // Answer of request
     $ans = array();
 
@@ -16,6 +16,9 @@
             $substance = array();
             $substance["id"] = $record["id"];
             $substance["name"] = $record["name"];
+            $substance["criticalPressure"] = $record["criticalPressure"];
+            $substance["criticalTemperature"] = $record["criticalTemperature"];
+            $substance["molecularWeight"] = $record["molecularWeight"];
             array_push($ans["substances"], $substance);
         }
     }

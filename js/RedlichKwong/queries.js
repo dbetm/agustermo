@@ -26,11 +26,26 @@ function loadNameSubstances(substances) {
     for (var i = 0; i < substances.length; i++) {
         let name = substances[i].name;
         let val = substances[i].id;
-        $(primarySubstance).append(new Option(name, val));
-        $(secondarySubstance).append(new Option(name, val));
+        let critPressure = substances[i].criticalPressure;
+        let critTemperature = substances[i].criticalTemperature;
+        let molecularWeight = substances[i].molecularWeight;
+        // Create DOM option
+        //var option = $('<option id="pri-'+val+'" value='+val+'>'+name+'</option>');
+        var option = $("<option></option>").text(name);
+        $(option).attr("id", "pri-"+val);
+        $(option).attr("value", val);
+        var option2 = $("<option></option>").text(name);
+        $(option2).attr("id", "sec-"+val);
+        $(option2).attr("value", val);
+        // Store the data
+        $(option).data('criticalPressure', critPressure);
+        $(option2).data('criticalPressure', critPressure);
+        $(option).data('criticalTemperature', critTemperature);
+        $(option2).data('criticalTemperature', critTemperature);
+        $(option).data('molecularWeight', molecularWeight);
+        $(option2).data('molecularWeight', molecularWeight);
+        // Appending in selects
+        $(primarySubstance).append(option);
+        $(secondarySubstance).append(option2);
     }
-}
-
-function RequestDataOfsubstances(id1, id2) {
-    
 }

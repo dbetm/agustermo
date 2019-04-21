@@ -33,9 +33,11 @@ function clear() {
 
 function solve() {
     if(validate()) {
+        // References to selected options
         var sub1Id = $('#primarySubstance').val();
+        var option1 = $('#pri-'+sub1Id);
         var sub2Id = $('#secondarySubstance').val();
-        RequestDataOfsubstances(sub1, sub2);
+        var option2 = $('#sec-'+sub1Id);
     }
     else {
 
