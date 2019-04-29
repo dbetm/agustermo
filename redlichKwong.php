@@ -9,6 +9,7 @@
         <script src="lib/jquery-3.4.0.min.js" charset="utf-8"></script>
         <script src="js/RedlichKwong/queries.js" charset="utf-8"></script>
         <script src="js/RedlichKwong/interaction.js" charset="utf-8"></script>
+        <script src="js/RedlichKwong/calcs.js" charset="utf-8"></script>
     </head>
     <body>
         <?php
@@ -68,7 +69,59 @@
             </div>
         </form>
         <section id="result">
-
+            <article class="result">
+                <h3>Amount of moles:</h3>
+                <div class="content-result">
+                    <p id="amount-option1"></p>
+                    <p id="amount-option2"></p>
+                    <p id="amount-total"></p>
+                </div>
+            </article>
+            <hr>
+            <article class="result">
+                <h3>Y:</h3>
+                <div class="content-result">
+                    <p id="result-y1"></p>
+                    <p id="result-y2"></p>
+                </div>
+            </article>
+            <hr>
+            <article class="result">
+                <h3 id="result-title-sub1">Parameters of the Redlich-Kwong equation for</h3>
+                <div class="content-result">
+                    <p id="result-a1"></p>
+                    <p id="result-b1"></p>
+                </div>
+            </article>
+            <hr>
+            <article class="result">
+                <h3 id="result-title-sub2">Parameters of the Redlich-Kwong equation for</h3>
+                <div class="content-result">
+                    <p id="result-a2"></p>
+                    <p id="result-b2"></p>
+                </div>
+            </article>
+            <hr>
+            <article class="result">
+                <h3>A_mix</h3>
+                <div class="content-result">
+                    <p id="result-amix"></p>
+                </div>
+            </article>
+            <hr>
+            <article class="result">
+                <h3>B_mix</h3>
+                <div class="content-result">
+                    <p id="result-bmix"></p>
+                </div>
+            </article>
+            <hr>
+            <article class="result">
+                <h2 id="variable-name"></h2>
+                <div class="content-result">
+                    <p id="result-final"></p>
+                </div>
+            </article>
         </section>
     </body>
 </html>

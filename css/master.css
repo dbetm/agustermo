@@ -26,6 +26,18 @@
 #result {
     margin: 5px auto;
     width: 90%;
+    padding: 15px;
     border-radius: 12px;
     background-color: rgba(160, 193, 142, 0.56);
+}
+
+/* Article */
+
+.result h2, .result h3 {
+    text-align: center;
+}
+
+.result {
+    text-align: left;
+    padding: 4px;
 }
