@@ -25,19 +25,21 @@
 
 #result {
     margin: 5px auto;
-    width: 90%;
+    width: 60%;
     padding: 15px;
     border-radius: 12px;
-    background-color: rgba(160, 193, 142, 0.56);
+    background-color: rgba(6, 158, 126, 0.92);
 }
 
 /* Article */
 
 .result h2, .result h3 {
     text-align: center;
+    color: white;
 }
 
 .result {
     text-align: left;
-    padding: 4px;
+    padding: 5px;
+    margin: 5px 2px;
 }

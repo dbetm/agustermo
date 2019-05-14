@@ -4,6 +4,8 @@ $(document).ready(function() {
     $("#pressure-group").hide();
     $("#temperature-group").hide();
     getSubstances();
+    // Hidding result section
+    $("#result").hide();
 });
 
 function displayVariable(name) {
@@ -28,11 +30,20 @@ function displayVariable(name) {
 }
 
 function clear() {
+    // Hiding the fields of the variables
+    $("#volumen-group").hide();
+    $("#pressure-group").hide();
+    $("#temperature-group").hide();
+    // Hidding result section
+    $("#result").hide();
+    // Reset values of result section
 
 }
 
 function solve() {
     if(validate()) {
+        // Show result section
+        $("#result").show();
         // References to selected options
             // Primary substance
         var sub1Id = $('#primarySubstance').val();
@@ -102,10 +113,10 @@ function solve() {
         var result;
         switch (variable) {
             case "volumen":
-                result = calculateVolumen();
+                result = calculateVolumen(nSubstance1, nSubstance2, pressure, temperature, bmix, amix);
                 break;
             case "pressure":
-                result = calculatePressure();
+                result = calculatePressure(volumen, nSubstance1, nSubstance2, temperature, bmix, amix);
                 break;
             case "temperature":
                 result = calculateTemperature();
@@ -123,11 +134,11 @@ function solve() {
         $("#result-y1").text("Y_1: " + y1);
         $("#result-y2").text("Y_2: " + y2);
             // a1 and b1
-        $("#result-title-sub1").append(" " + textOption1 + ".");
+        $("#result-title-sub1").append(" " + textOption1 + ":");
         $("#result-a1").text("a1: " + a1 + " (bar*m^6*k^0.5)/mol^2");
         $("#result-b1").text("b1: " + b1 + " m^3/mol");
             // a2 and b2
-        $("#result-title-sub2").append(" " + textOption2 + ".");
+        $("#result-title-sub2").append(" " + textOption2 + ":");
         $("#result-a2").text("a2: " + a2 + " (bar*m^6*k^0.5)/mol^2");
         $("#result-b2").text("b2: " + b2 + " m^3/mol");
             // amix

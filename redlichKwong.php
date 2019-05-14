@@ -71,6 +71,7 @@
         <section id="result">
             <article class="result">
                 <h3>Amount of moles:</h3>
+                <br>
                 <div class="content-result">
                     <p id="amount-option1"></p>
                     <p id="amount-option2"></p>
@@ -80,6 +81,7 @@
             <hr>
             <article class="result">
                 <h3>Y:</h3>
+                <br>
                 <div class="content-result">
                     <p id="result-y1"></p>
                     <p id="result-y2"></p>
@@ -88,6 +90,7 @@
             <hr>
             <article class="result">
                 <h3 id="result-title-sub1">Parameters of the Redlich-Kwong equation for</h3>
+                <br>
                 <div class="content-result">
                     <p id="result-a1"></p>
                     <p id="result-b1"></p>
@@ -96,6 +99,7 @@
             <hr>
             <article class="result">
                 <h3 id="result-title-sub2">Parameters of the Redlich-Kwong equation for</h3>
+                <br>
                 <div class="content-result">
                     <p id="result-a2"></p>
                     <p id="result-b2"></p>
@@ -103,14 +107,16 @@
             </article>
             <hr>
             <article class="result">
-                <h3>A_mix</h3>
+                <h3>A_mix:</h3>
+                <br>
                 <div class="content-result">
                     <p id="result-amix"></p>
                 </div>
             </article>
             <hr>
             <article class="result">
-                <h3>B_mix</h3>
+                <h3>B_mix:</h3>
+                <br>
                 <div class="content-result">
                     <p id="result-bmix"></p>
                 </div>
