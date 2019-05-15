@@ -116,7 +116,7 @@ function solve() {
                 result = calculatePressure(volumen, nSubstance1, nSubstance2, temperature, bmix, amix);
                 break;
             case "temperature":
-                result = calculateTemperature();
+                result = calculateTemperature(nSubstance1, nSubstance2, pressure, volumen, bmix, amix);
                 break;
             default:
         }

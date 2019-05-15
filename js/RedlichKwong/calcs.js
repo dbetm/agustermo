@@ -43,9 +43,12 @@ function calculateVolumen(nSubstance1, nSubstance2, pressure, temperature, bmix,
     return res + " m^3";
 }
 
-function calculateTemperature() {
-    var res = "NaN";
-    return res + " K";
+function calculateTemperature(nSubstance1, nSubstance2, pressure, volumen, bmix, amix) {
+    var x = 0.01;
+    var molarVolumen = calculateMolarVolumen(volumen, nSubstance1, nSubstance2);
+    var temperature = newtonRaphsonTemperature(x, pressure, molarVolumen, bmix, amix);
+    temperature = temperature.toFixed(4);
+    return temperature + " K";
 }
 
 function calculateMolarVolumen(volumen, nSubstance1, nSubstance2) {
@@ -99,3 +102,34 @@ function newtonRaphsonVolume(x, pressure, temperature, bmix, amix) {
 }
 
 // ------------- Temperature ------------------------------------------
+function evaluateTemperatureFunction(x, pressure, molarVolumen, bmix, amix) {
+    console.log(x, pressure, molarVolumen, bmix, amix);
+    var res = (R * x) / (molarVolumen - bmix);
+    res -= amix / (Math.sqrt(x) * molarVolumen * (molarVolumen + bmix));
+    res -= pressure;
+    //console.log("Evaluate function is: " + res);
+    return res;
+}
+
+function evaluateDerivTemperatureFunction(x, molarVolumen, bmix, amix) {
+    console.log(x, molarVolumen, bmix, amix);
+    var res = R / (molarVolumen - bmix);
+    res += amix / (2 * molarVolumen * Math.pow(x, 3/2) * (molarVolumen + bmix));
+    //console.log("Evaluate derivative function is: " + res);
+    return res;
+}
+
+function newtonRaphsonTemperature(x, pressure, molarVolumen, bmix, amix) {
+    var h = evaluateTemperatureFunction(x, pressure, molarVolumen, bmix, amix);
+    h /= evaluateDerivTemperatureFunction(x, molarVolumen, bmix, amix);
+
+    while(Math.abs(h) >= EPSILON) {
+        //console.log("h: " + h);
+        h = evaluateTemperatureFunction(x, pressure, molarVolumen, bmix, amix);
+        h /= evaluateDerivTemperatureFunction(x, molarVolumen, bmix, amix);
+        // x(i+1) = x(i) - f(x)/f'(x)
+        x = x - h;
+    }
+    console.log("The value of the root is: " + x);
+    return x;
+}
