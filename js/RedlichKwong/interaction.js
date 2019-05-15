@@ -122,25 +122,42 @@ function solve() {
         }
         // Render
             // Display result section
-
             // Amount of moles
+                // Defining significant ciphers
+        var total = nSubstance1+nSubstance2;
+        total = total.toFixed(4);
+        nSubstance1 = nSubstance1.toFixed(4);
+        nSubstance2 = nSubstance2.toFixed(4);
         $("#amount-option1").text(textOption1 + ": " + nSubstance1 + " mol.");
         $("#amount-option2").text(textOption2 + ": " + nSubstance2 + " mol.");
-        $("#amount-total").text("Amount total (nT): " + (nSubstance1+nSubstance2) + " mol");
+        $("#amount-total").text("Amount total (nT): " + (total) + " mol");
             // y1 and y2
+                // Defining exponential notation
+        y1 = y1.toExponential(4);
+        y2 = y2.toExponential(4);
         $("#result-y1").text("Y_1: " + y1);
         $("#result-y2").text("Y_2: " + y2);
             // a1 and b1
+                // Defining exponential notation
+        a1 = a1.toExponential(4);
+        b1 = b1.toExponential(4);
         $("#result-title-sub1").append(" " + textOption1 + ":");
         $("#result-a1").text("a1: " + a1 + " (bar*m^6*k^0.5)/mol^2");
         $("#result-b1").text("b1: " + b1 + " m^3/mol");
             // a2 and b2
+                // Defining exponential notation
+        a2 = a2.toExponential(4);
+        b2 = b2.toExponential(4);
         $("#result-title-sub2").append(" " + textOption2 + ":");
         $("#result-a2").text("a2: " + a2 + " (bar*m^6*k^0.5)/mol^2");
         $("#result-b2").text("b2: " + b2 + " m^3/mol");
             // amix
+                // Defining exponential notation
+        amix = amix.toExponential(4);
         $("#result-amix").text("amix: " + amix + " (bar*m^6*k^0.5)/mol^2");
             // bmix
+                // Defining significant ciphers
+        bmix = bmix.toExponential(4);
         $("#result-bmix").text("bmix: " + bmix + " m^3/mol");
             // Final output
         $("#variable-name").text("The " + variable + " is:");
