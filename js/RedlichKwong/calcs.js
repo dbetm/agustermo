@@ -39,8 +39,8 @@ function calculateVolumen(nSubstance1, nSubstance2, pressure, temperature, bmix,
     var x = 1e-9;
     x = newtonRaphsonVolume(x, pressure, temperature, bmix, amix);
     var res = (nSubstance1 + nSubstance2) * x;
-    res = res.toFixed(4);
-    return res + " m^3";
+    //res = res.toFixed(4);
+    return res; //+ " m^3";
 }
 
 function calculateTemperature(nSubstance1, nSubstance2, pressure, volumen, bmix, amix) {

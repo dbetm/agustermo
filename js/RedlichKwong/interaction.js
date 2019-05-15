@@ -105,18 +105,23 @@ function solve() {
         var amix = evaluateAmix(a1, a2, y1, y2, k12);
             // b_mix
         var bmix = evaluateBmix(b1, y1, b2, y2);
-
+        var molarVolume;
         // Calculating final result
         var result;
         switch (variable) {
             case "volumen":
                 result = calculateVolumen(nSubstance1, nSubstance2, pressure, temperature, bmix, amix);
+                molarVolume = calculateMolarVolumen(result, nSubstance1, nSubstance2);
+                result = result.toFixed(4);
+                result += " m^3";
                 break;
             case "pressure":
                 result = calculatePressure(volumen, nSubstance1, nSubstance2, temperature, bmix, amix);
+                molarVolume = calculateMolarVolumen(volumen, nSubstance1, nSubstance2);
                 break;
             case "temperature":
                 result = calculateTemperature(nSubstance1, nSubstance2, pressure, volumen, bmix, amix);
+                molarVolume = calculateMolarVolumen(volumen, nSubstance1, nSubstance2);
                 break;
             default:
         }
@@ -159,6 +164,10 @@ function solve() {
                 // Defining significant ciphers
         bmix = bmix.toExponential(4);
         $("#result-bmix").text("bmix: " + bmix + " m^3/mol");
+            // Molar volume
+                // Defining significant ciphers
+        molarVolume = molarVolume.toExponential(4);
+        $("#result-molar-volume").text("mV: " + molarVolume + " m^3/mol");
             // Final output
         $("#variable-name").text("The " + variable + " is:");
         $("#result-final").text(result);

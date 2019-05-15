@@ -43,12 +43,12 @@
             <div class="group">
                 <p><label for=""><b>What do you want to calc?</b></label></p>
                 <br>
-                <input type="radio" name="variable" value="volumen" onclick="displayVariable('volumen');"> Volumen
+                <input type="radio" name="variable" value="volumen" onclick="displayVariable('volumen');"> Volume
                 <input type="radio" name="variable" value="pressure" onclick="displayVariable('pressure');"> Pressure
                 <input type="radio" name="variable" value="temperature" onclick="displayVariable('temperature');"> Temperature
             </div>
             <div class="group" id="volumen-group">
-                <label for="volumen">Volumen (m3): </label>
+                <label for="volumen">Volume (m^3): </label>
                 <input id="volumen" type="number" name="volumen" step="any">
             </div>
             <div class="group" id="pressure-group">
@@ -122,6 +122,14 @@
                 <br>
                 <div class="content-result">
                     <p id="result-bmix"></p>
+                </div>
+            </article>
+            <hr>
+            <article class="result">
+                <h3>Molar volume:</h3>
+                <br>
+                <div class="content-result">
+                    <p id="result-molar-volume"></p>
                 </div>
             </article>
             <hr>
