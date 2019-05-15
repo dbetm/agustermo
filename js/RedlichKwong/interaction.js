@@ -6,6 +6,8 @@ $(document).ready(function() {
     getSubstances();
     // Hidding result section
     $("#result").hide();
+    // Hiding button: Start again.
+    $("#btnStartAgain").hide();
 });
 
 function displayVariable(name) {
@@ -29,21 +31,16 @@ function displayVariable(name) {
     }
 }
 
-function clear() {
-    // Hiding the fields of the variables
-    $("#volumen-group").hide();
-    $("#pressure-group").hide();
-    $("#temperature-group").hide();
-    // Hidding result section
-    $("#result").hide();
-    // Reset values of result section
-
-}
-
 function solve() {
     if(validate()) {
+        // Hiding button: Calculate and clear
+        $("#btnSolve").hide();
+        $("#btnClear").hide();
+        // Show button: Start
+        $("#btnStartAgain").show();
         // Show result section
         $("#result").show();
+
         // References to selected options
             // Primary substance
         var sub1Id = $('#primarySubstance').val();
@@ -158,4 +155,47 @@ function validate() {
     var ans = true;
 
     return ans;
+}
+
+function clear() {
+    // Hiding the fields of the variables
+    $("#volumen-group").hide();
+    $("#pressure-group").hide();
+    $("#temperature-group").hide();
+    // Reset values of fields
+    $("#massPrimarySubstance").val("");
+    $("#massSecondarySubstance").val("");
+    $("#k12").val("");
+    $("#volumen").val("");
+    $("#pressure").val("");
+    $("#temperature").val("");
+    $('input[name=variable]').prop('checked', false);
+}
+
+function startAgain() {
+    // Reset values in result section
+    $("#amount-option1").text("");
+    $("#amount-option2").text("");
+    $("#amount-total").text("");
+    $("#result-y1").text("");
+    $("#result-y2").text("");
+    $("#result-title-sub1").text("Parameters of the Redlich-Kwong equation for");
+    $("#result-a1").text("");
+    $("#result-b1").text("");
+    $("#result-title-sub2").text("Parameters of the Redlich-Kwong equation for");
+    $("#result-a2").text("");
+    $("#result-b2").text("");
+    $("#result-amix").text("");
+    $("#result-bmix").text("");
+    $("#variable-name").text("");
+    $("#result-final").text("");
+    // Hiding result section
+    $("#result").hide();
+    // Call to clear()
+    clear();
+    // Showing buttons "Calculate" and "Clear"
+    $("#btnSolve").show();
+    $("#btnClear").show();
+    // Hiding button "Start again"
+    $("#btnStartAgain").hide();
 }

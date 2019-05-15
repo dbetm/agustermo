@@ -60,11 +60,14 @@
                 <input id="temperature" type="number" name="temperature" step="any">
             </div>
             <div class="group">
-                <button class="control" type="button" name="button" onclick="solve();">
+                <button id="btnSolve" class="control" type="button" name="button" onclick="solve();">
                     Calculate
                 </button>
-                <button class="control" type="button" name="button" onclick="clear();">
+                <button id="btnClear" class="control" type="button" name="button" onclick="clear();">
                     Clear
+                </button>
+                <button id="btnStartAgain" class="control" type="button" name="button" onclick="startAgain();">
+                    Try another
                 </button>
             </div>
         </form>
