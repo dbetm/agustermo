@@ -11,8 +11,11 @@ $(document).ready(function() {
 });
 
 function displayVariable(name) {
+    if($("#btnStartAgain").is(":visible")) {
+        return;
+    }
     switch (name) {
-        case "volumen":
+        case "volume":
             $("#volumen-group").hide();
             $("#pressure-group").show(100);
             $("#temperature-group").show(100);
@@ -61,7 +64,7 @@ function solve() {
         var variable = $('input[name=variable]:checked').val();
             // Depending of selected variable is read others 2 fields
         var temperature, volumen, pressure;
-        if(variable == "volumen") {
+        if(variable == "volume") {
             temperature = $("#temperature").val();
             pressure = $("#pressure").val();
         }
@@ -109,7 +112,7 @@ function solve() {
         // Calculating final result
         var result;
         switch (variable) {
-            case "volumen":
+            case "volume":
                 result = calculateVolumen(nSubstance1, nSubstance2, pressure, temperature, bmix, amix);
                 molarVolume = calculateMolarVolumen(result, nSubstance1, nSubstance2);
                 result = result.toFixed(4);
@@ -180,6 +183,21 @@ function solve() {
 function validate() {
     var ans = true;
 
+    if($("#massPrimarySubstance").val() == "") {
+        $("#massPrimarySubstance").focus();
+        ans = false;
+    }
+    else if($("#massSecondarySubstance").val() == "") {
+        $("#massSecondarySubstance").focus();
+        ans = false;
+    }
+    else if($("#k12").val() == "") {
+        $("#k12").focus();
+        ans = false;
+    }
+    else if($("#volumen").val() == "" && $("#temperature").val() == "" && $("#pressure").val() == "") {
+        ans  = false;
+    }
     return ans;
 }
 

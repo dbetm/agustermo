@@ -43,7 +43,7 @@
             <div class="group">
                 <p><label for=""><b>What do you want to calc?</b></label></p>
                 <br>
-                <input type="radio" name="variable" value="volumen" onclick="displayVariable('volumen');"> Volume
+                <input type="radio" name="variable" value="volume" onclick="displayVariable('volume');"> Volume
                 <input type="radio" name="variable" value="pressure" onclick="displayVariable('pressure');"> Pressure
                 <input type="radio" name="variable" value="temperature" onclick="displayVariable('temperature');"> Temperature
             </div>
