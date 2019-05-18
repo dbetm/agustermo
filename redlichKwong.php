@@ -63,7 +63,7 @@
                 <button id="btnSolve" class="control" type="button" name="button" onclick="solve();">
                     Calculate
                 </button>
-                <button id="btnClear" class="control" type="button" name="button" onclick="clear();">
+                <button id="btnClear" class="control" type="button" name="button" onclick="clear2();">
                     Clear
                 </button>
                 <button id="btnStartAgain" class="control" type="button" name="button" onclick="startAgain();">

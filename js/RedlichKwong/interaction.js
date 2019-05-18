@@ -201,7 +201,7 @@ function validate() {
     return ans;
 }
 
-function clear() {
+function clear2() {
     // Hiding the fields of the variables
     $("#volumen-group").hide();
     $("#pressure-group").hide();
@@ -236,7 +236,7 @@ function startAgain() {
     // Hiding result section
     $("#result").hide();
     // Call to clear()
-    clear();
+    clear2();
     // Showing buttons "Calculate" and "Clear"
     $("#btnSolve").show();
     $("#btnClear").show();
